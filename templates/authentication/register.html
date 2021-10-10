@@ -1,0 +1,87 @@
+{% extends 'base_auth.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class = "row">
+    <div class = "col-md-4"> </div>
+    <div class = "col-md-4"> 
+        <div class = "card mt-5">
+            
+
+                <div class = "card-body">
+                    <div class = "card-title py-3">
+                <h4> Register for a free account </h4>
+                </div>
+
+                <form action = "{% url 'register' %}" method = "post">
+                    {% csrf_token %} <!-- Always include in form -->
+
+                    {% include 'partials/_messages.html' %}
+
+                    <label for="user"> Username </label>
+                    <div class = "form-group mb-2">
+                        <input 
+                        type = "text"
+                        name = "username"
+                        placeholder = "John Doe"
+                        class = "form-control form-control-sm"
+                        id = "usernameField"
+                        value = "{{fieldValues.username}}"
+                        />
+                    </div>
+                    <div class = "invalid-user" style="display:none">
+                    </div>
+                    <p class = "text-sm text-success username-success"> </p>
+                    <label for="email">Email address</label>
+                    <div class = "form-group mb-1">
+                        <input 
+                        type = "email"
+                        name = "email"
+                        placeholder = "johndoe@gmail.com"
+                        class = "form-control form-control-sm"
+                        id = "emailField"
+                        value = "{{fieldValues.email}}"
+                        />
+                    </div>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. </br> </small>
+                    <div class = "invalid-email" style="display:none">
+                    <p class = "text-sm text-success email-success"> </p>
+                    </div>
+                    <label for="pass mt-1">Password</label>
+                    <div class = "form-group mb-2">
+                        <input 
+                        type = "password"
+                        name = "password"
+                        placeholder = "Password"
+                        class = "form-control form-control-sm"
+                        id = "passwordField"
+                        />
+                        <small class = "float-end py-3 show-password-toggle"> SHOW </small>
+                    </div>
+                    <input type = "submit" value = "Register" class = "btn-lg btn w-100 btn-primary submit-btn" />
+                </form>
+                <div class = "container">
+        <span class = "text-lead lead">
+          Have an account?
+        </span>
+
+        <a href = "{% url 'login' %}"> Login </a>
+        </br>
+        <span class = "text-lead lead">
+          Forgot Passsword?
+        </span>
+        <a href = "{% url 'request-password' %}"> Reset it </a>
+      </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class = "col-md-4"> </div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock content %}

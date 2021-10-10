@@ -1,0 +1,13 @@
+#header {
+    background: rgb(0, 62, 69);
+    color: #FFFFFF;
+}
+
+#head h1 #branding h1 {
+    color: #FFFFFF !important;
+}
+
+div.breadcrumbs {
+    background: rgb(61, 88, 106);
+    color: #FFFFFF;
+}
