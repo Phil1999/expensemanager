@@ -6,7 +6,9 @@ I wanted to create a site where you can manage your expenses and see aggregated 
 <br/>
 
 ## **Description**
-Website where users can login and immediately start logging their expenses/income and view visualizations of them. 
+Website where users can login and immediately start logging their expenses/income and view visualizations of them.
+
+![picture of app](app.PNG)
 
 ## **Technologies Used**
 - Django
